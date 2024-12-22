@@ -28,7 +28,7 @@ async function createServer() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          model: "gpt-4o-realtime-preview-2024-12-17",
+          model: "gpt-4o-mini-realtime-preview-2024-12-17",
           voice: "verse",
         }),
       });
