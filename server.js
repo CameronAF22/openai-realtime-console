@@ -2,11 +2,11 @@ import express from 'express';
 import fs from 'fs';
 import { createServer as createViteServer } from 'vite';
 import 'dotenv/config';
+import instructions from './instructions.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
 const apiKey = process.env.OPENAI_API_KEY;
-
 async function createServer() {
   const vite = await createViteServer({
     server: { middlewareMode: true },
@@ -29,7 +29,8 @@ async function createServer() {
         },
         body: JSON.stringify({
           model: "gpt-4o-mini-realtime-preview-2024-12-17",
-          voice: "verse",
+          voice: "shimmer",
+          instructions: instructions
         }),
       });
 
